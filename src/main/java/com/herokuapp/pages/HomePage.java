@@ -23,4 +23,25 @@ public class HomePage extends BasePage{
         click(windows);
         return new WindowsPage(driver);
     }
+
+    @FindBy(css = "[href='/checkboxes']")
+    WebElement checkboxes;
+    public CheckboxesPage getCheckboxes() {
+        click(checkboxes);
+        return new CheckboxesPage(driver);
+    }
+
+    @FindBy(css = "[href='/dropdown']")
+    WebElement dropdown;
+    public DropdownPage getDropdown() {
+        click(dropdown);
+        return new DropdownPage(driver);
+    }
+
+    @FindBy(css = "[href='/upload']")
+    WebElement upload;
+    public UploadPage getFileUpload() {
+        click(upload);
+        return new UploadPage(driver);
+    }
 }
