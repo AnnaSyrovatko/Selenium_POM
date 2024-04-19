@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class DropdownPage extends BasePage{
     public DropdownPage(WebDriver driver) {
         super(driver);
@@ -14,17 +16,21 @@ public class DropdownPage extends BasePage{
 
     @FindBy(id = "dropdown")
     WebElement dropdown;
-    @FindBy(css = "option:nth-child(2)")
-    WebElement option1;
-    @FindBy(css = "option:nth-child(3)")
-    WebElement option2;
+
     public DropdownPage selectDropdownOptions(String option) {
-        if (option.equals("Option 1")){
-            click(option1);
-        }
-        if (option.equals("Option 2")){
-            click(option2);
-        }
+        Select select = new Select(dropdown);
+        select.selectByVisibleText(option); //can be also selected by value or index
+
+
         return this;
     }
+
+    public void verifySelectedOption(String option) {
+        Select select = new Select(dropdown);
+        //List<WebElement> selectedOptionList = select.getAllSelectedOptions();
+        Assert.assertEquals(option, select.getFirstSelectedOption().getText());
+
+    }
+
 }
+

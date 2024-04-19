@@ -15,6 +15,6 @@ public class DropdownListTest extends TestBase{
 
     @Test
     public void dropdownListTest(){
-        new DropdownPage(driver).selectDropdownOptions("Option 2");
+        new DropdownPage(driver).selectDropdownOptions("Option 2").verifySelectedOption("Option 2");
     }
 }

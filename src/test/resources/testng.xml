@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoky" verbose="1">
+    <test name="Smoky">
+        <classes>
+            <class name="com.herokuapp.tests.DropdownListTest"/>
+            <class name="com.herokuapp.tests.NewWindowsTest"/>
+            <class name="com.herokuapp.tests.AlertsTests"/>
+        </classes>
+    </test>
+
+</suite>
